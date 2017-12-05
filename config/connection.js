@@ -1,4 +1,5 @@
 // Set up MySQL connection.
+//Here is where you make the connection to the database and export the info used by the ORM
 var mysql = require("mysql");
 
 var connection = mysql.createConnection({
