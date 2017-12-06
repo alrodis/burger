@@ -1,6 +1,6 @@
 <h1>Burgers!</h1>
 
-<h2>Burgers That Have Not Been Eaten!</h2>
+<h2>Burgers That Have Not Been Eaten! Tom</h2>
 
 <ul>
   {{#each burgers}}
@@ -16,11 +16,12 @@
 
 <ul>
   {{#each burgers}}
-    {{#if this.devoured}}
+    {{!-- {{#if this.devoured}} --}}
 	  <li>
-      	<form action="burgers/update/{{this.id}}?_method=PUT" method="POST"></form>
+      	<form action="burgers/update/{{this.id}}?_method=PUT" method="POST">{{this.burger_name}}</form> 
+      	<button id={{this.id}} class="change-devoured">Eat</button>
       </li>
-    {{/if}}
+    {{!-- {{/if}} --}}
   {{/each}}
 </ul>
 

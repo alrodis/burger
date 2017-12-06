@@ -10,10 +10,13 @@ var burger = require("../models/burger.js");
 //router.get, router.post, router.put
 
 router.get("/", function (req, res) {
+	console.log('we hit this route ---')
 	burger.all(function (data) {
 		// var hbsObject = {
 		// 	burgers: data
 		// };
+		console.log('data we are sending to the page', data);
+		
 		res.render("index", {
 			burgers: data
 		});
@@ -22,7 +25,9 @@ router.get("/", function (req, res) {
 });
 
 router.get("/burgers", function (req, res) {
+	
 	burger.all(function (data) {
+
 		res.render("index", {
 			burgers: data
 		});

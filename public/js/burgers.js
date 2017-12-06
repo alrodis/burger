@@ -1,6 +1,7 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
-$(function() {
+$( document ).ready(function() {
   $(".change-devoured").on("click", function(event) {
+    console.log('hello ----');
     var id = $(this).data("id");
     var newDevoured = $(this).data("newdevoured");
 
@@ -39,7 +40,7 @@ $(function() {
         console.log("created new burger");
         // Reload the page to get the updated list
         location.reload();
-      }
-    );
+      });
   });
+});
 
