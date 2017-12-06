@@ -16,7 +16,7 @@ router.get("/", function (req, res) {
 		// 	burgers: data
 		// };
 		console.log('data we are sending to the page', data);
-		
+
 		res.render("index", {
 			burgers: data
 		});
@@ -38,7 +38,7 @@ router.post("/burgers/create", function (req, res) {
     burger.create([
     "burger_name"
   ], [
-    req.body.burger_name
+    req.body.name
   ], function (result) {
         // Send back the ID of the new burger
         res.redirect("/burgers")

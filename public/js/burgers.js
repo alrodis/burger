@@ -28,8 +28,10 @@ $( document ).ready(function() {
 
     var newBurger = {
       name: $("#bu").val().trim(),
-      devoured: $("[name=devoured]:checked").val().trim()
+      devoured: false
     };
+
+    console.log(newBurger);
 
     // Send the POST request.
     $.ajax("/burgers/create", {
