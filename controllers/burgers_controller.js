@@ -52,15 +52,18 @@ router.put("/burgers/update/:id", function (req, res) {
     console.log("condition", condition);
 
     burger.update({
-        devoured: req.body.devoured
+        devoured: req.body.Devoured
     }, condition, function (data) {
-    	res.redirect("/burgers");
-        if (result.changedRows == 0) {
+        //	if (data.changedRows == 0) {
+        	console.log('burger updated!');
+        	return res.redirect("/");
             // If no rows were changed, then the ID must not exist, so 404
-            return res.status(404).end();
-        } else {
-            res.status(200).end();
-        }
+            //return res.status(404).end();
+        //} else {
+        	
+
+            //res.status(200).end();
+        //}
     });
 });
 
